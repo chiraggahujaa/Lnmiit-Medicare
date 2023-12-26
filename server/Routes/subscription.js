@@ -65,6 +65,7 @@ async function sendMonthlyEmails(email) {
         console.error("Error sending email:", error);
         // Delete the email from the database if sending fails
         await Email.findOneAndDelete({ email: email.email });
+        return;
       }
     }
     console.log("Monthly emails sent successfully.");
@@ -76,13 +77,14 @@ async function sendMonthlyEmails(email) {
 // Handle email subscriptions
 router.post("/subscribe", async (req, res) => {
   const { email } = req.body;
-  console.log(email);
+
   try {
     const existingEmail = await Email.findOne({ email });
     if (existingEmail) {
       res.status(409).send("Email address is already subscribed.");
       return;
     }
+
     const newEmail = new Email({ email, subscribedAt: new Date() });
     await newEmail.save();
     // Call the function to send the first batch of emails

@@ -17,7 +17,7 @@ app.use("/api/users", require("./Routes/user"));
 app.use("/api/faculty", require("./Routes/faculty"));
 app.use("/api/email", require("./Routes/subscription"));
 app.use("/api/student", require("./Routes/student"));
-
+app.use("/api/makeup", require("./Routes/makeup"));
 
 const port = process.env.PORT || 5000;
 
@@ -26,13 +26,3 @@ app.listen(port, async() => {
   await connectDB();
   console.log(`Server running on port ${port}`);
 });
-
-
-/*"start": "react-scripts start", 
-    "start:lambda" : "netify-lambda serve src/lambda",
-    "build" : "run-p build:**",
-    "build:app" : "react-scripts build",
-    "build:lambda" : "netify-lambda build src/lambda",
-    "test" : "react-scripts test",
-    "eject" : "react-scripts eject",
-    "dev": "node server" */

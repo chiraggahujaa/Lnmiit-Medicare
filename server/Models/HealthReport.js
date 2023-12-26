@@ -14,9 +14,9 @@ const HealthReportSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type : Date,
-    required : true,
-  }
+    type: Date,
+    required: true,
+  },
 });
 
 const HealthReport = mongoose.model("HealthReport", HealthReportSchema);

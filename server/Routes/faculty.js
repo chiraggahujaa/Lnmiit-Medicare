@@ -63,7 +63,7 @@ router.post("/create", async (req, res) => {
 // Get all body vitals entries for a given unique id
 router.get("/:uniqueId", async (req, res) => {
   try {
-    console.log(req.params.uniqueId);
+    // console.log(req.params.uniqueId);
     const teacher = await Teacher.findOne({
       uniqueId: req.params.uniqueId,
     });
@@ -81,7 +81,7 @@ router.get("/:uniqueId", async (req, res) => {
     );
     res.json(bodyVitals);
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
     res.status(500).send("Server error");
   }
 });
