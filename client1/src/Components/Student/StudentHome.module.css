@@ -1,0 +1,11 @@
+.outer{
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.studentsCard{
+    width: 70%;
+    padding: 20px;
+}

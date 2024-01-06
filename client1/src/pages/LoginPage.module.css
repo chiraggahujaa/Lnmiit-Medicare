@@ -1,0 +1,16 @@
+.login {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.bg {
+  background-image: url('../Images/bg.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dummy {
+  padding: 50px 30px;
+}
